@@ -1,0 +1,17 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: face-zuul
+zuul:
+  host:
+    max-total-connections: 10000
+    max-per-route-connections: 10000
+  routes:
+    user:
+      path: /user/**
+      serviceId: face-server-backup-service
+      stripPrefix: false
+
+
+
